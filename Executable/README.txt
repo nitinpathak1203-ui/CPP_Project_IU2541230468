@@ -1,0 +1,1 @@
+No Windows .exe is included because this package was built in a Linux environment. Build the Windows executable on your PC using MinGW-w64 g++ (see the root README.txt). Run the compile command from the project root; it creates Executable/DeviceRepairCenter.exe.

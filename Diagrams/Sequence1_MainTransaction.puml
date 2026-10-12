@@ -1,0 +1,18 @@
+@startuml
+actor Admin
+participant "main()" as Main
+participant RepairCenter
+participant FileManager
+Admin -> Main: Start program
+Main -> RepairCenter: construct("Data")
+RepairCenter -> FileManager: readRows(customers/devices/technicians/jobs)
+FileManager --> RepairCenter: saved records
+RepairCenter --> Admin: show menu
+Admin -> RepairCenter: processRepair()
+RepairCenter --> Admin: request job/device/technician details
+Admin -> RepairCenter: enter validated details
+RepairCenter -> RepairCenter: verify IDs and capacity
+RepairCenter -> FileManager: writeRows(jobs.txt)
+FileManager --> RepairCenter: save complete
+RepairCenter --> Admin: job created
+@enduml

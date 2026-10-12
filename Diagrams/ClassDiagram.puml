@@ -1,0 +1,64 @@
+@startuml
+class Customer {
+ # id : int
+ # name : string
+ # phone : string
+ + Customer()
+ + Customer(id,name,phone)
+ + virtual ~Customer()
+ + getId() : int
+ + getName() : string
+ + getPhone() : string
+ + virtual role() : string
+}
+class Technician {
+ - specialization : string
+ + Technician()
+ + Technician(id,name,phone,specialization)
+ + getSpecialization() : string
+ + role() : string
+}
+class Device {
+ - id : int
+ - customerId : int
+ - type, brand, model, issue : string
+ + getters()
+ + setIssue(value)
+}
+class RepairJob {
+ - id, deviceId, technicianId : int
+ - status, diagnosis : string
+ - cost : double
+ + getters()
+ + setStatus(value)
+ + setDiagnosis(value)
+ + setCost(value)
+}
+class RepairCenter {
+ - customers : Customer*
+ - devices : Device*
+ - jobs : RepairJob*
+ - technicians : Technician*
+ - counts/capacities : int
+ - dataDir : string
+ + load()
+ + save()
+ + addCustomer()/addDevice()/addTechnician()
+ + displayAll()/search()
+ + updateJob()/deleteJob()
+ + processRepair()/report()/run()
+}
+class FileManager {
+ + readRows(path) : vector
+ + writeRows(path, rows)
+}
+Technician --|> Customer
+RepairCenter o-- "0..*" Customer
+RepairCenter o-- "0..*" Device
+RepairCenter o-- "0..*" RepairJob
+RepairCenter o-- "0..*" Technician
+RepairCenter ..> FileManager
+Device --> Customer : customerId
+RepairJob --> Device : deviceId
+RepairJob --> Technician : technicianId
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+actor Admin
+participant RepairCenter
+participant FileManager
+Admin -> RepairCenter: updateJob()
+RepairCenter --> Admin: request repair job ID
+Admin -> RepairCenter: enter ID
+RepairCenter -> RepairCenter: search jobs array
+alt Job found
+ RepairCenter --> Admin: request status, diagnosis, cost
+ Admin -> RepairCenter: enter new values
+ RepairCenter -> RepairCenter: validate status and cost
+ RepairCenter -> FileManager: write updated jobs.txt
+ FileManager --> RepairCenter: saved
+ RepairCenter --> Admin: confirmation
+else Job not found
+ RepairCenter --> Admin: not found message
+end
+@enduml

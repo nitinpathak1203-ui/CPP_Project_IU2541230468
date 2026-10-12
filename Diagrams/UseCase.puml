@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+actor Customer
+actor Technician
+actor "Repair Center Admin" as Admin
+rectangle "Device Repair Center" {
+ usecase "Register Customer" as UC1
+ usecase "Register Device" as UC2
+ usecase "Assign Technician / Create Job" as UC3
+ usecase "Search and View Records" as UC4
+ usecase "Update Repair Status" as UC5
+ usecase "Delete Repair Job" as UC6
+ usecase "Generate Report" as UC7
+ usecase "Save / Load Data" as UC8
+}
+Customer -- UC1
+Customer -- UC2
+Technician -- UC3
+Technician -- UC5
+Admin -- UC1
+Admin -- UC2
+Admin -- UC3
+Admin -- UC4
+Admin -- UC5
+Admin -- UC6
+Admin -- UC7
+Admin -- UC8
+@enduml

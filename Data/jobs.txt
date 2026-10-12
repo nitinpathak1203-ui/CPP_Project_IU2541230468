@@ -1,0 +1,4 @@
+401|201|301|Completed|Replaced OLED display assembly and tested touch|4200.00
+402|202|302|In Progress|Replaced thermal paste, installing new 86Wh battery|2850.00
+403|203|303|Pending|Awaiting OEM digitizer flex cable delivery|0.00
+404|204|303|Completed|Cleaned digital crown contacts and resealed chassis|1200.00

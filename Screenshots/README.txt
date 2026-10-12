@@ -1,0 +1,1 @@
+Replace this note with screenshots captured from your own program execution. Suggested screenshots: main menu; add customer; add device; add technician; create repair job; display records; report; restart program and verify persistence. Do not submit this note as if it were a screenshot.

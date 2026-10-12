@@ -1,0 +1,4 @@
+201|101|Smartphone|Apple|iPhone 13|Cracked OLED screen replacement
+202|102|Laptop|Dell|XPS 15|Battery draining rapidly and overheating
+203|103|Tablet|Samsung|Galaxy Tab S8|Touch digitizer unresponsive
+204|104|Smartwatch|Apple|Watch Series 7|Crown button not responding
